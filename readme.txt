@@ -33,8 +33,7 @@ Libraries in use:
 2. Activate the [Mortgage Calculator](https://www.calculator.io/mortgage-calculator/ "Mortgage Calculator Homepage") plugin through the "Plugins" menu in WordPress.
 
 == Usage ==
-* Add the shortcode `[ci_mortgage_calculator]` to your page or post and configure default mortgage parameters.
-* If you are using widgets, just add the Mortgage Calculator to the sidebar through the `Appearance -> Widgets -> Mortgage Calculator` menu in WordPress.
+* Add the shortcode `[ci_mortgage_calculator]` to your page, post or sidebar.
 * Add the following code: `<?php display_ci_mortgage_calculator(); ?>` to your template where you would like the Mortgage Calculator to appear.
 
 == Screenshots ==

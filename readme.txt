@@ -13,34 +13,35 @@ Calculate your monthly payment, total property ownership costs, and amortization
 
 Calculate your monthly payment, total property ownership costs, and amortization timeline with options for taxes, PMI, HOA, and early payments with our free mortgage calculator.
 
-[Mortgage Calculator Homepage](https://www.calculator.io/mortgage-calculator/ "Mortgage Calculator Homepage")
+[https://www.calculator.io/mortgage-calculator/](https://www.calculator.io/mortgage-calculator/)
 
-__Shortcode__
-
-Use the Mortgage Calculator shortcode:
+__Mortgage Calculator Shortcode__
 
 `[ci_mortgage_calculator]`
-
-Libraries in use:
-1. https://mathjs.org/
-2. https://katex.org/
-3. https://github.com/aFarkas/lazysizes
-4. https://github.com/RobinHerbots/Inputmask
-5. https://air-datepicker.com/
-6. https://www.chartjs.org/
 
 == Installation ==
 
 1. Upload the /ci_mortgage_calculator/ folder to the /wp-content/plugins/ directory.
 2. Activate the [Mortgage Calculator](https://www.calculator.io/mortgage-calculator/ "Mortgage Calculator Homepage") plugin through the "Plugins" menu in WordPress.
 
-== Usage ==
+== Mortgage Calculator Usage ==
+
 * Add the shortcode `[ci_mortgage_calculator]` to your page, post or sidebar.
 * Add the following code: `<?php display_ci_mortgage_calculator(); ?>` to your template where you would like the Mortgage Calculator to appear.
 
 == Screenshots ==
+
 1. The Mortgage Calculator Input Form.
 2. The Mortgage Calculator Calculation Results.
+
+== Libraries used in Mortgage Calculator ==
+
+1. https://mathjs.org/
+2. https://katex.org/
+3. https://github.com/aFarkas/lazysizes
+4. https://github.com/RobinHerbots/Inputmask
+5. https://air-datepicker.com/
+6. https://www.chartjs.org/
 
 == Changelog ==
 

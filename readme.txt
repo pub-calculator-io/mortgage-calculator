@@ -1,6 +1,6 @@
 === Mortgage Calculator by Calculator.iO ===
 Contributors: calculatorio
-Tags: 
+Tags: mortgage calculator, home loan calculator, mortgage payment calculator, mortgage affordability calculator, mortgage amortization calculator, mortgage interest calculator, mortgage refinance calculator, mortgage comparison calculator, mortgage rate calculator, mortgage payoff calculator
 Requires at least: 5.0
 Tested up to: 6.4.0
 Stable tag: 1.0.0

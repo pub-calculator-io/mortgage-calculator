@@ -1,4 +1,4 @@
-# Mortgage Calculator WordPress Widget by [Calculator.iO](https://www.calculator.io/ "Calculator.iO Homepage")
+# Mortgage Calculator Widget for WordPress
 
 Calculate your monthly payment, total property ownership costs, and amortization timeline with options for taxes, PMI, HOA, and early payments with our free mortgage calculator.
 

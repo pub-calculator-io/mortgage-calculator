@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Mortgage Calculator by www.calculator.io
+Plugin Name: CI Mortgage calculator
 Plugin URI: https://www.calculator.io/mortgage-calculator/
 Description: Calculate your monthly payment, total property ownership costs, and amortization timeline with options for taxes, PMI, HOA, and early payments with our free mortgage calculator.
 Version: 1.0.0

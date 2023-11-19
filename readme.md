@@ -7,7 +7,7 @@ Calculate your monthly payment, total property ownership costs, and amortization
 
 ## Installation
 
-1. [Download](https://github.com/pub-calculator-io/age-calculator/archive/refs/heads/master.zip) the ZIP file of this repository.
+1. [Download](https://github.com/pub-calculator-io/mortgage-calculator/archive/refs/heads/master.zip) the ZIP file of this repository.
 2. Upload the /mortgage-calculator-master/ folder to the /wp-content/plugins/ directory.
 3. Activate the [Mortgage Calculator](https://www.calculator.io/mortgage-calculator/ "Mortgage Calculator Homepage") plugin through the "Plugins" menu in WordPress.
 

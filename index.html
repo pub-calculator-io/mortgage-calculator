@@ -123,7 +123,7 @@
                 					<div class="input-field row">
                 						<span class="input-field__hint">$</span>
                 						<input type="text" class="input-field__input" placeholder="" id="property_taxes" value="4400" />
-                						<span class="input-field__hint">/year</span>
+                						<span class="input-field__hint">per year</span>
                 					</div>
                 				</label></div>
                 			<div class="input-wrapper row">
@@ -132,14 +132,14 @@
                 					<div class="input-field row">
                 						<span class="input-field__hint">$</span>
                 						<input type="text" class="input-field__input" placeholder="" id="home_insurance" value="1300" />
-                						<span class="input-field__hint">/year</span>
+                						<span class="input-field__hint">per year</span>
                 					</div>
                 				</label>	<label class="input col  ">
                 					<p class="input__title">PMI</p>
                 					<div class="input-field row">
                 						<span class="input-field__hint">$</span>
                 						<input type="text" class="input-field__input" placeholder="" id="pmi" value="" />
-                						<span class="input-field__hint">/year</span>
+                						<span class="input-field__hint">per year</span>
                 					</div>
                 				</label></div>
                 			<div class="input-wrapper row">
@@ -148,14 +148,14 @@
                 					<div class="input-field row">
                 						<span class="input-field__hint">$</span>
                 						<input type="text" class="input-field__input" placeholder="" id="hoa_fee" value="100" />
-                						<span class="input-field__hint">/months</span>
+                						<span class="input-field__hint">per month</span>
                 					</div>
                 				</label>	<label class="input col  ">
                 					<p class="input__title">Other Costs</p>
                 					<div class="input-field row">
                 						<span class="input-field__hint">$</span>
                 						<input type="text" class="input-field__input" placeholder="" id="other_costs" value="5000" />
-                						<span class="input-field__hint">/year</span>
+                						<span class="input-field__hint">per year</span>
                 					</div>
                 				</label></div>
                 		</div>
@@ -164,7 +164,7 @@
                 <div class="calculator-content calculator-content--gray calculator-content--footer calculator-content--small row  " >
                 
                 
-                		<button class="system-switcher system-switcher--format" onclick="toggleSystem(this)">
+                		<button class="system-switcher system-switcher--format" onclick="toggleSystem(this)" aria-label="Switch System">
                 			<div class="system-switcher__circle"></div>
                 			<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 	<path d="M7.84254 5.61418C7.84254 4.72269 8.56524 4 9.45673 4C10.7869 4 11.5462 5.51856 10.7481 6.58269L7.84254 10.4567H11.4745M3 5.29135L4.08967 4.41961C4.30105 4.2505 4.61418 4.401 4.61418 4.6717V10.4567" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -185,16 +185,19 @@
                 		</script>
                 
                 
-                	<button class="button button--primary ml-auto" onclick="calculate(this)">Calculate</button>
+                	<button class="button button--primary ml-auto" onclick="calculate(this); animateElements();" data-action="calculate" id="action-button">Calculate</button>
                 </div>
                 
-                	<script type="text/javascript" src="./assets/js/chart.js" id="chartjs_script"></script>
+                	<script type="text/javascript" src="./assets/js/lib/chartjs/chart.min.js" id="chartjs_lib" defer></script>
+                	<script type="text/javascript" src="./assets/js/chart.js" id="chartjs_script" defer></script>
                 
                 
-                	<link rel="stylesheet" href="./assets/css/air-datepicker.css" />
-                	<script type="text/javascript" src="./assets/js/lib/air-datepicker.js" id="datepicker_script"></script>
                 
-                	<script type="text/javascript" src="./assets/js/calculator.js"></script>
+                
+                	<link rel="stylesheet" href="./assets/css/air-datepicker.min.css" defer />
+                	<script type="text/javascript" src="./assets/js/lib/air-datepicker.js" id="datepicker_script" defer></script>
+                
+                	<script type="text/javascript" src="./assets/js/calculator.js" defer></script>
             </div>
         </div>
     </div>
@@ -209,12 +212,11 @@
         </svg>
         		<p class="calculator-error__title">There was an error with your calculation.</p>
         	</div>
-        	<div class="col" id="error-list">
-        	</div>
+        	<div class="col" id="error-list"></div>
         </div>        <span id="calculator_result"><div class="calculator-result col">
 	<p class="table-cell table-cell--dark table-cell--only-title">Mortgage</p>
 	<div class="table-cell table-cell--age table-cell--only row">
-		<div class="col chart__text">
+		<div class="col chart__text animate">
 			<p class="result-text" id="monthly-payment">Monthly Payment: $1,816.92</p>
 			<p class="result-text result-text--small-loan" id="property-tax">Property Tax: $132,000.00</p>
 			<p class="result-text result-text--small-loan" id="insurance">Home Insurance: $39,000.00</p>
@@ -264,7 +266,7 @@
 			<table class="result-table">
 				<thead>
 				<tr>
-					<th class="indigo text-center">№</th>
+					<th class="indigo text-center">#</th>
 					<th class="indigo">DATE</th>
 					<th class="indigo">INTEREST</th>
 					<th class="indigo">PRINCIPAL</th>
@@ -497,7 +499,7 @@
 			<table class="result-table">
 				<thead>
 				<tr>
-					<th class="indigo text-center">№</th>
+					<th class="indigo text-center">#</th>
 					<th class="indigo">DATE</th>
 					<th class="indigo">INTEREST</th>
 					<th class="indigo">PRINCIPAL</th>
@@ -590,7 +592,7 @@
 					<td>$315,689.37</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #1 End</th>
+					<th class="indigo text-center" colspan="5">Year 1 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">13</td>
@@ -677,7 +679,7 @@
 					<td>$311,135.59</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #2 End</th>
+					<th class="indigo text-center" colspan="5">Year 2 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">25</td>
@@ -764,7 +766,7 @@
 					<td>$306,324.94</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #3 End</th>
+					<th class="indigo text-center" colspan="5">Year 3 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">37</td>
@@ -851,7 +853,7 @@
 					<td>$301,242.94</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #4 End</th>
+					<th class="indigo text-center" colspan="5">Year 4 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">49</td>
@@ -938,7 +940,7 @@
 					<td>$295,874.26</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #5 End</th>
+					<th class="indigo text-center" colspan="5">Year 5 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">61</td>
@@ -1025,7 +1027,7 @@
 					<td>$290,202.75</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #6 End</th>
+					<th class="indigo text-center" colspan="5">Year 6 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">73</td>
@@ -1112,7 +1114,7 @@
 					<td>$284,211.33</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #7 End</th>
+					<th class="indigo text-center" colspan="5">Year 7 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">85</td>
@@ -1199,7 +1201,7 @@
 					<td>$277,881.94</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #8 End</th>
+					<th class="indigo text-center" colspan="5">Year 8 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">97</td>
@@ -1286,7 +1288,7 @@
 					<td>$271,195.52</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #9 End</th>
+					<th class="indigo text-center" colspan="5">Year 9 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">109</td>
@@ -1373,7 +1375,7 @@
 					<td>$264,131.94</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #10 End</th>
+					<th class="indigo text-center" colspan="5">Year 10 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">121</td>
@@ -1460,7 +1462,7 @@
 					<td>$256,669.91</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #11 End</th>
+					<th class="indigo text-center" colspan="5">Year 11 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">133</td>
@@ -1547,7 +1549,7 @@
 					<td>$248,786.97</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #12 End</th>
+					<th class="indigo text-center" colspan="5">Year 12 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">145</td>
@@ -1634,7 +1636,7 @@
 					<td>$240,459.37</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #13 End</th>
+					<th class="indigo text-center" colspan="5">Year 13 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">157</td>
@@ -1721,7 +1723,7 @@
 					<td>$231,662.03</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #14 End</th>
+					<th class="indigo text-center" colspan="5">Year 14 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">169</td>
@@ -1808,7 +1810,7 @@
 					<td>$222,368.44</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #15 End</th>
+					<th class="indigo text-center" colspan="5">Year 15 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">181</td>
@@ -1895,7 +1897,7 @@
 					<td>$212,550.63</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #16 End</th>
+					<th class="indigo text-center" colspan="5">Year 16 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">193</td>
@@ -1982,7 +1984,7 @@
 					<td>$202,179.01</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #17 End</th>
+					<th class="indigo text-center" colspan="5">Year 17 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">205</td>
@@ -2069,7 +2071,7 @@
 					<td>$191,222.35</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #18 End</th>
+					<th class="indigo text-center" colspan="5">Year 18 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">217</td>
@@ -2156,7 +2158,7 @@
 					<td>$179,647.66</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #19 End</th>
+					<th class="indigo text-center" colspan="5">Year 19 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">229</td>
@@ -2243,7 +2245,7 @@
 					<td>$167,420.05</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #20 End</th>
+					<th class="indigo text-center" colspan="5">Year 20 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">241</td>
@@ -2330,7 +2332,7 @@
 					<td>$154,502.72</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #21 End</th>
+					<th class="indigo text-center" colspan="5">Year 21 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">253</td>
@@ -2417,7 +2419,7 @@
 					<td>$140,856.74</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #22 End</th>
+					<th class="indigo text-center" colspan="5">Year 22 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">265</td>
@@ -2504,7 +2506,7 @@
 					<td>$126,441.03</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #23 End</th>
+					<th class="indigo text-center" colspan="5">Year 23 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">277</td>
@@ -2591,7 +2593,7 @@
 					<td>$111,212.15</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #24 End</th>
+					<th class="indigo text-center" colspan="5">Year 24 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">289</td>
@@ -2678,7 +2680,7 @@
 					<td>$95,124.25</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #25 End</th>
+					<th class="indigo text-center" colspan="5">Year 25 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">301</td>
@@ -2765,7 +2767,7 @@
 					<td>$78,128.86</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #26 End</th>
+					<th class="indigo text-center" colspan="5">Year 26 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">313</td>
@@ -2852,7 +2854,7 @@
 					<td>$60,174.80</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #27 End</th>
+					<th class="indigo text-center" colspan="5">Year 27 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">325</td>
@@ -2939,7 +2941,7 @@
 					<td>$41,207.99</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #28 End</th>
+					<th class="indigo text-center" colspan="5">Year 28 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">337</td>
@@ -3026,7 +3028,7 @@
 					<td>$21,171.30</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #29 End</th>
+					<th class="indigo text-center" colspan="5">Year 29 End</th>
 				</tr>
 				<tr>
 					<td class="text-center">349</td>
@@ -3113,16 +3115,13 @@
 					<td>$4.39</td>
 				</tr>
 				<tr>
-					<th class="indigo text-center" colspan="5">Year #30 End</th>
+					<th class="indigo text-center" colspan="5">Year 30 End</th>
 				</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
-
-<!-- <script src="./assets/js/chart.js"./assets/js/chart.js').then(e => switchTheme = e.default)
-</script> -->
 </span>
     </div>
 </div>

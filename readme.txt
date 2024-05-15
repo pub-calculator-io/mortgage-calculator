@@ -24,7 +24,6 @@ Add the following code to your template where you would like the Mortgage Calcul
 == Screenshots ==
 
 1. The Mortgage Calculator Input Form.
-2. The Mortgage Calculator Calculation Results.
 
 == Installation ==
 

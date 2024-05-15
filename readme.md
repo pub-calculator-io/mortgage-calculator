@@ -3,7 +3,6 @@
 Calculate your monthly payment, total property ownership costs, and amortization timeline with options for taxes, PMI, HOA, and early payments with our free mortgage calculator.
 
 ![Mortgage Calculator Input Form](/assets/images/screenshot-1.png "Mortgage Calculator Input Form")
-![Mortgage Calculator Calculation Results](/assets/images/screenshot-2.png "Mortgage Calculator Calculation Results")
 
 ## Installation
 
